@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday Brother!</title>
+    <style>
+        body {
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to right, #ff9a9e, #fad0c4);
+            color: #333;
+            text-align: center;
+        }
+
+        .slide {
+            display: none;
+            padding: 50px 20px;
+            min-height: 100vh;
+            box-sizing: border-box;
+            transition: all 0.5s ease;
+        }
+
+        .active {
+            display: block;
+        }
+
+        h1 {
+            font-size: 3em;
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-size: 1.5em;
+        }
+
+        img {
+            max-width: 70%;
+            border-radius: 15px;
+            margin: 20px 0;
+        }
+
+        button {
+            padding: 15px 30px;
+            margin: 20px 10px;
+            font-size: 1.2em;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            background-color: #ff6f91;
+            color: white;
+            transition: 0.3s;
+        }
+
+        button:hover {
+            background-color: #ff3c78;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Slide 1: Cover -->
+    <div class="slide active">
+        <h1>Happy Birthday, Brother!</h1>
+        <img src="https://i.ibb.co/4sG9C8R/birthday-cake.png" alt="Birthday Cake">
+        <p>Today is your special day!</p>
+    </div>
+
+    <!-- Slide 2: Childhood Memories -->
+    <div class="slide">
+        <h1>Childhood Memories</h1>
+        <img src="" alt="ChildhoodPhoto">
+        <p>Remember all the fun times growing up together?</p>
+    </div>
+
+    <!-- Slide 3: Fun Facts -->
+    <div class="slide">
+        <h1>Fun Facts</h1>
+        <p>Favorite Hobby: Playing cricket</p>
+        <p>Quirky Habit: Always late 😄</p>
+        <p>Hidden Talent: Instgram 🥷🏻</p>
+    </div>
+
+    <!-- Slide 4: Family Love -->
+    <div class="slide">
+        <h1>Family Loves You!</h1>
+        <img src="" alt="Family Photo">
+        <p>We are proud of you and love you endlessly ❤️</p>
+    </div>
+
+    <!-- Slide 5: Birthday Wishes -->
+    <div class="slide">
+        <h1>Birthday Wishes</h1>
+        <p>Wishing you happiness, success, and all your dreams come true! 🎉</p>
+        <img src="https://i.ibb.co/Tgy5cD7/balloons.png" alt="Balloons">
+    </div>
+
+    <!-- Navigation Buttons -->
+    <div>
+        <button onclick="prevSlide()">Previous</button>
+        <button onclick="nextSlide()">Next</button>
+    </div>
+
+    <script>
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.slide');
+
+        function showSlide(index) {
+            slides.forEach((slide, i) => {
+                slide.classList.remove('active');
+                if(i === index) slide.classList.add('active');
+            });
+        }
+
+        function nextSlide() {
+            currentSlide++;
+            if(currentSlide >= slides.length) currentSlide = 0;
+            showSlide(currentSlide);
+        }
+
+        function prevSlide() {
+            currentSlide--;
+            if(currentSlide < 0) currentSlide = slides.length - 1;
+            showSlide(currentSlide);
+        }
+    </script>
+
+</body>
+</html>
